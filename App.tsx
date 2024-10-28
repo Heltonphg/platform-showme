@@ -9,7 +9,8 @@ import {
   Roboto_700Bold,
   Roboto_500Medium
 } from '@expo-google-fonts/roboto'
-import theme from './src/theme'
+import { Routes } from '@routes/index'
+import theme from '@theme/index'
 
 SplashScreen.preventAutoHideAsync()
 
@@ -30,6 +31,7 @@ export default function App() {
     <SafeAreaProvider onLayout={onLayoutRootView}>
       <ThemeProvider theme={theme}>
         <StatusBar style="auto" backgroundColor="transparent" translucent />
+        <Routes />
       </ThemeProvider>
     </SafeAreaProvider>
   )
