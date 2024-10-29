@@ -1,5 +1,6 @@
 import { useCallback } from 'react'
 import { SafeAreaProvider } from 'react-native-safe-area-context'
+import { QueryClient, QueryClientProvider } from 'react-query'
 import * as SplashScreen from 'expo-splash-screen'
 import { StatusBar } from 'expo-status-bar'
 import { ThemeProvider } from 'styled-components'
@@ -26,13 +27,16 @@ export default function App() {
   if (!fontsLoaded) {
     return null
   }
+  const queryClient = new QueryClient()
 
   return (
     <SafeAreaProvider onLayout={onLayoutRootView}>
-      <ThemeProvider theme={theme}>
-        <StatusBar style="auto" backgroundColor="transparent" translucent />
-        <Routes />
-      </ThemeProvider>
+      <QueryClientProvider client={queryClient}>
+        <ThemeProvider theme={theme}>
+          <StatusBar style="inverted" backgroundColor="transparent" translucent />
+          <Routes />
+        </ThemeProvider>
+      </QueryClientProvider>
     </SafeAreaProvider>
   )
 }

@@ -21,6 +21,91 @@
       "id": "3",
       "title": "Netshow.me Talks",
       "site_id": 70
+    },
+    {
+      "id": "4",
+      "title": "Tech Innovations",
+      "site_id": 71
+    },
+    {
+      "id": "5",
+      "title": "Market Leaders",
+      "site_id": 71
+    },
+    {
+      "id": "6",
+      "title": "Creative Minds",
+      "site_id": 72
+    },
+    {
+      "id": "7",
+      "title": "Digital Transformation",
+      "site_id": 72
+    },
+    {
+      "id": "8",
+      "title": "Entrepreneurship Essentials",
+      "site_id": 73
+    },
+    {
+      "id": "9",
+      "title": "Product Showcase",
+      "site_id": 73
+    },
+    {
+      "id": "10",
+      "title": "Business Strategy",
+      "site_id": 74
+    },
+    {
+      "id": "11",
+      "title": "Customer Success",
+      "site_id": 74
+    },
+    {
+      "id": "12",
+      "title": "Innovative Ideas",
+      "site_id": 75
+    },
+    {
+      "id": "13",
+      "title": "Sustainability Talks",
+      "site_id": 75
+    },
+    {
+      "id": "14",
+      "title": "Marketing Trends",
+      "site_id": 76
+    },
+    {
+      "id": "15",
+      "title": "Health and Wellness",
+      "site_id": 76
+    },
+    {
+      "id": "16",
+      "title": "Future of Work",
+      "site_id": 77
+    },
+    {
+      "id": "17",
+      "title": "AI and Robotics",
+      "site_id": 77
+    },
+    {
+      "id": "18",
+      "title": "Financial Insights",
+      "site_id": 78
+    },
+    {
+      "id": "19",
+      "title": "Data Science",
+      "site_id": 78
+    },
+    {
+      "id": "20",
+      "title": "Cybersecurity Basics",
+      "site_id": 79
     }
   ],
   "videos": [

@@ -3,8 +3,8 @@ import { ms } from 'react-native-size-matters'
 
 export default {
   COLORS: {
-    WHITE: '#FFFFFF',
-    BLACK: '#000000'
+    LIGHT: '#F5F5F5',
+    DARK: '#151318'
   },
   FONT_FAMILY: {
     REGULAR: 'Roboto_400Regular',
@@ -20,7 +20,8 @@ export default {
     LG: ms(18),
     XL: ms(20),
     XXL: ms(24),
-    width: Dimensions.get('window').width,
-    height: Dimensions.get('window').height
+    WIDTH: Dimensions.get('window').width,
+    HEIGHT: Dimensions.get('window').height,
+    BASE_PEDDING: ms(16)
   }
 }

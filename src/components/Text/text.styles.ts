@@ -2,7 +2,7 @@ import styled, { css } from 'styled-components/native'
 import { TextVariant, TextTypes } from '@type/text.types'
 
 export const StyledText = styled.Text<TextTypes>`
-  color: ${({ theme }) => theme.COLORS.WHITE};
+  color: ${({ theme }) => theme.COLORS.LIGHT};
   ${({ variant }) => {
     switch (variant) {
       case TextVariant.TINY_REGULAR:

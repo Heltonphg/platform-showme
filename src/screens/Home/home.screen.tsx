@@ -1,9 +1,10 @@
-import { Text, View } from 'react-native'
+import { CategoryList } from './components/CategoryList/categories-list.component'
+import { Container } from './home.styles'
 
 export const Home = () => {
   return (
-    <View>
-      <Text>Home Screen</Text>
-    </View>
+    <Container>
+      <CategoryList />
+    </Container>
   )
 }
