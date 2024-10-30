@@ -3,16 +3,30 @@ import { useInfiniteQuery, UseInfiniteQueryResult, useQueryClient } from 'react-
 import { PageData } from '@type/page-data.types'
 import { commonUtils } from '@utils/common-utils'
 
-export function useInfiniteList<T>(
-  key: string | string[],
-  callback: (page: number) => Promise<PageData<T>>
-): UseInfiniteQueryResult<PageData<T>> & { list: T[]; resetList: () => void } {
+type InfiniteListProps<T> = {
+  key: string | string[]
+  callback: (page: number, filterParam?: string) => Promise<PageData<T>>
+  filterParam?: string
+}
+
+export function useInfiniteList<T>({
+  key,
+  callback,
+  filterParam
+}: InfiniteListProps<T>): UseInfiniteQueryResult<PageData<T>> & {
+  list: T[]
+  resetList: () => void
+} {
   const [list, setList] = useState<T[]>([])
 
   const queryClient = useQueryClient()
-  const infiniteResult = useInfiniteQuery(key, ({ pageParam = 1 }) => callback(pageParam), {
-    getNextPageParam: (lastPage) => lastPage.next
-  })
+  const infiniteResult = useInfiniteQuery(
+    key,
+    ({ pageParam = 1 }) => callback(pageParam, filterParam),
+    {
+      getNextPageParam: (lastPage) => lastPage.next
+    }
+  )
 
   useEffect(() => {
     if (infiniteResult.data) {

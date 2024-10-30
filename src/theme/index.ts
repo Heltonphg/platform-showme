@@ -3,6 +3,8 @@ import { ms } from 'react-native-size-matters'
 
 export default {
   COLORS: {
+    PRIMARY: '#6D2DB6',
+    SECONDARY: '#2A104A',
     LIGHT: '#F5F5F5',
     DARK: '#151318'
   },
@@ -13,15 +15,16 @@ export default {
   },
 
   METRICS: {
-    XXS: ms(10),
-    XS: ms(12),
-    SM: ms(14),
-    MD: ms(16),
-    LG: ms(18),
-    XL: ms(20),
+    XXS: ms(12),
+    XS: ms(14),
+    SM: ms(16),
+    MD: ms(18),
+    LG: ms(20),
+    XL: ms(22),
     XXL: ms(24),
     WIDTH: Dimensions.get('window').width,
     HEIGHT: Dimensions.get('window').height,
-    BASE_PEDDING: ms(16)
+    BASE_PEDDING: ms(16),
+    MS: ms
   }
 }

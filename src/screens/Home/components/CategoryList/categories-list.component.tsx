@@ -4,7 +4,10 @@ import { CategoryFlatList, Container } from './categories-list.styles'
 import { CategoryListItem } from './CategoryListItem/catery-list-item.component'
 
 export const CategoryList = () => {
-  const { categories, isFetchingNextPage, onEndReached } = useCategoryList()
+  const { categories, isFetchingNextPage, onEndReached, isLoading } = useCategoryList()
+  if (isLoading) {
+    return <Loading isLoading={isLoading} />
+  }
 
   return (
     <Container>
@@ -15,7 +18,7 @@ export const CategoryList = () => {
         renderItem={({ item }) => <CategoryListItem category={item} />}
         onEndReached={onEndReached}
         onEndReachedThreshold={0.1}
-        ListFooterComponent={<Loading isLoading={isFetchingNextPage} />}
+        ListFooterComponent={<Loading isLoading={isFetchingNextPage && !isLoading} />}
       />
     </Container>
   )

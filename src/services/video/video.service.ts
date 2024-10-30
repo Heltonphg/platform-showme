@@ -1,19 +1,19 @@
 import { api } from '@services/api.service'
-import { CategoryType } from '@src/types/category.types'
+import { VideoType } from '@src/types/video.types'
 import { PageData } from '@type/page-data.types'
 
-const LIMIT = 10
+const LIMIT = 5
 
-async function list(page: number): Promise<PageData<CategoryType>> {
+async function list(page: number, categoryId?: string): Promise<PageData<VideoType>> {
   try {
-    const { data: response } = await api.get<PageData<CategoryType>>('categories', {
+    const { data: response } = await api.get<PageData<VideoType>>('videos', {
       params: {
         _page: page,
-        _per_page: LIMIT
+        _per_page: LIMIT,
+        category: categoryId
       }
     })
 
-    //TODO: Remove this line after implement the real API
     await new Promise((resolve) => setTimeout(resolve, 2000))
 
     return {
@@ -28,6 +28,6 @@ async function list(page: number): Promise<PageData<CategoryType>> {
   }
 }
 
-export const categoryService = {
+export const videoService = {
   list
 }

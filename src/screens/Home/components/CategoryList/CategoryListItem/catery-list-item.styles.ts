@@ -3,14 +3,11 @@ import { Text } from '@components/Text/text.component'
 import { TextVariant } from '@src/types/text.types'
 
 export const Container = styled.View`
-  width: 100%;
-  padding: 16px;
-  background-color: transparent;
-  border: 1px solid #fff;
-  border-radius: 10px;
-  margin-bottom: 10px;
+  margin-bottom: ${({ theme }) => theme.METRICS.MS(16)}px;
 `
 
 export const TitleCategory = styled(Text).attrs({
-  variant: TextVariant.EXTRA_LARGE_BOLD
-})``
+  variant: TextVariant.LARGE_BOLD
+})`
+  margin-bottom: ${({ theme }) => theme.METRICS.MS(8)}px;
+`
