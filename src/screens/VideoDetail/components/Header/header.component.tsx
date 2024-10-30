@@ -1,43 +1,19 @@
-import React from 'react'
-import { Image, Pressable, StyleSheet } from 'react-native'
-import Animated, { FadeIn } from 'react-native-reanimated'
+import { Pressable } from 'react-native'
+import { FadeIn } from 'react-native-reanimated'
 import { useSafeAreaInsets } from 'react-native-safe-area-context'
 import { useNavigation } from '@react-navigation/native'
-import { AppNavigationProps } from '@src/routes/types/app.routes.types'
+import { AppNavigationProps } from '@routes/types/app.routes.types'
+import { Chevron, Container } from './header.styles'
 
 export const Header = () => {
   const inset = useSafeAreaInsets()
   const navigation = useNavigation<AppNavigationProps>()
 
   return (
-    <Animated.View style={[styles.container, { top: inset.top }]} entering={FadeIn.delay(400)}>
-      <Pressable
-        onPress={() => {
-          navigation.goBack()
-        }}>
-        <Image source={require('../../../../assets/chevron.png')} style={styles.chevron} />
+    <Container style={{ top: inset.top }} entering={FadeIn.delay(400)}>
+      <Pressable onPress={() => navigation.goBack()}>
+        <Chevron source={require('../../../../assets/chevron.png')} />
       </Pressable>
-      <Pressable
-        onPress={() => {
-          console.log('LIKE')
-        }}>
-        <Image source={require('../../../../assets/like.png')} style={styles.chevron} />
-      </Pressable>
-    </Animated.View>
+    </Container>
   )
 }
-
-const styles = StyleSheet.create({
-  container: {
-    position: 'absolute',
-    left: 20,
-    right: 20,
-    zIndex: 1,
-    flexDirection: 'row',
-    justifyContent: 'space-between'
-  },
-  chevron: {
-    width: 44,
-    height: 44
-  }
-})

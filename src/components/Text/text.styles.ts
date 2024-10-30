@@ -1,8 +1,9 @@
+import Animated from 'react-native-reanimated'
 import styled, { css } from 'styled-components/native'
 import { TextVariant, TextTypes } from '@type/text.types'
 
 export const StyledText = styled.Text<TextTypes>`
-  color: ${({ theme }) => theme.COLORS.LIGHT};
+  color: ${({ theme }) => theme.COLORS.LIGHT[200]};
   ${({ variant }) => {
     switch (variant) {
       case TextVariant.TINY_REGULAR:
@@ -63,3 +64,5 @@ export const StyledText = styled.Text<TextTypes>`
     }
   }};
 `
+
+export const AnimatedText = Animated.createAnimatedComponent(StyledText)

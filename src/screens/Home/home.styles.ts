@@ -5,7 +5,7 @@ import { TextVariant } from '@src/types/text.types'
 
 export const Container = styled(SafeAreaView)`
   flex: 1;
-  background: ${({ theme }) => theme.COLORS.DARK};
+  background: ${({ theme }) => theme.COLORS.DARK[200]};
 `
 export const Title = styled(Text).attrs({
   variant: TextVariant.EXTRA_LARGE_BOLD

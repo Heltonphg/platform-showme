@@ -1,3 +1,4 @@
+import './src/libs/dayjs'
 import { useCallback } from 'react'
 import { SafeAreaProvider } from 'react-native-safe-area-context'
 import { QueryClient, QueryClientProvider } from 'react-query'

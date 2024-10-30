@@ -14,7 +14,7 @@ export const Pressable = styled.TouchableOpacity.attrs({
 `
 
 export const Thumbnail = styled(Animated.Image).attrs({
-  resizeMode: 'cover'
+  resizeMode: 'stretch'
 })`
   width: 100%;
   height: 100%;
