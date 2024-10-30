@@ -17,7 +17,7 @@ export const VideoList = ({ categoryId }: VideoListProps) => {
         horizontal
         data={videos}
         keyExtractor={(item) => item.id}
-        renderItem={({ item }) => <VideoListItem video={item} />}
+        renderItem={({ item, index }) => <VideoListItem video={item} index={index} />}
         onEndReached={onEndReached}
         onEndReachedThreshold={0.1}
         ListFooterComponent={isFetchingNextPage ? <VideosSkeleton /> : null}

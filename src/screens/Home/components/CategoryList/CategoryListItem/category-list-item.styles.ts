@@ -10,5 +10,5 @@ export const Container = styled.View`
 export const TitleCategory = styled(Text).attrs({
   variant: TextVariant.LARGE_BOLD
 })`
-  margin-bottom: ${({ theme }) => theme.METRICS.MS(8)}px;
+  margin-bottom: ${({ theme }) => theme.METRICS.MS(11)}px;
 `

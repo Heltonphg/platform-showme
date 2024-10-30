@@ -1,6 +1,9 @@
+import Animated from 'react-native-reanimated'
 import styled from 'styled-components/native'
 
-export const Container = styled.TouchableOpacity.attrs({
+export const Container = styled(Animated.View)``
+
+export const Pressable = styled.TouchableOpacity.attrs({
   activeOpacity: 0.8
 })`
   width: ${({ theme }) => theme.METRICS.MS(130)}px;
@@ -10,7 +13,7 @@ export const Container = styled.TouchableOpacity.attrs({
   overflow: hidden;
 `
 
-export const Thumbnail = styled.Image.attrs({
+export const Thumbnail = styled(Animated.Image).attrs({
   resizeMode: 'cover'
 })`
   width: 100%;

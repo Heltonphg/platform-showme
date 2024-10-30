@@ -1,14 +1,26 @@
+import { FadeInDown } from 'react-native-reanimated'
+import { useNavigation } from '@react-navigation/native'
+import { AppNavigationProps, RootAppRoutes } from '@routes/types/app.routes.types'
 import { VideoType } from '@type/video.types'
-import { Container, Thumbnail } from './video-list-item.styles'
+import { Pressable, Thumbnail, Container } from './video-list-item.styles'
 
 type VideoListItemProps = {
   video: VideoType
+  index: number
 }
 
-export const VideoListItem = ({ video }: VideoListItemProps) => {
+export const VideoListItem = ({ video, index }: VideoListItemProps) => {
+  const { navigate } = useNavigation<AppNavigationProps>()
+
+  const onNavigateToVideoDetail = () => {
+    navigate(RootAppRoutes.VIDEO_DETAIL, { videoItem: video })
+  }
+
   return (
-    <Container>
-      <Thumbnail source={{ uri: video.thumbnail }} />
+    <Container entering={FadeInDown.delay(200 * index)}>
+      <Pressable onPress={onNavigateToVideoDetail}>
+        <Thumbnail sharedTransitionTag={video.id} source={{ uri: video.thumbnail }} />
+      </Pressable>
     </Container>
   )
 }
