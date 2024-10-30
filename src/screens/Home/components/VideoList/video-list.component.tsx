@@ -1,4 +1,4 @@
-import { Loading } from '@components/Loading/loading.component'
+import { VideosSkeleton } from '@components/Skeletons/videos.skeleton'
 import { useVideoList } from './video-list.hook'
 import { Container, VideoFlatList } from './video-list.styles'
 import { VideoListProps } from './video-list.types'
@@ -8,7 +8,7 @@ export const VideoList = ({ categoryId }: VideoListProps) => {
   const { videos, onEndReached, isFetchingNextPage, isLoading } = useVideoList({ categoryId })
 
   if (isLoading) {
-    return <Loading isLoading />
+    return <VideosSkeleton />
   }
 
   return (
@@ -20,7 +20,7 @@ export const VideoList = ({ categoryId }: VideoListProps) => {
         renderItem={({ item }) => <VideoListItem video={item} />}
         onEndReached={onEndReached}
         onEndReachedThreshold={0.1}
-        ListFooterComponent={<Loading isLoading={isFetchingNextPage} />}
+        ListFooterComponent={isFetchingNextPage ? <VideosSkeleton /> : null}
       />
     </Container>
   )

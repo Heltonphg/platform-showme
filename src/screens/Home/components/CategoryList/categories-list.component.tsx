@@ -1,12 +1,18 @@
-import { Loading } from '@components/Loading/loading.component'
+import { ListCategorieskeleton } from '@components/Skeletons/list-categories.component'
+import { VideosSkeleton } from '@components/Skeletons/videos.skeleton'
 import { useCategoryList } from './categories-list.hook'
-import { CategoryFlatList, Container } from './categories-list.styles'
-import { CategoryListItem } from './CategoryListItem/catery-list-item.component'
+import { CategoryFlatList, Container, Wrapper } from './categories-list.styles'
+import { CategoryListItem } from './CategoryListItem/category-list-item.component'
 
 export const CategoryList = () => {
   const { categories, isFetchingNextPage, onEndReached, isLoading } = useCategoryList()
+
   if (isLoading) {
-    return <Loading isLoading={isLoading} />
+    return (
+      <Wrapper>
+        <ListCategorieskeleton />
+      </Wrapper>
+    )
   }
 
   return (
@@ -17,8 +23,8 @@ export const CategoryList = () => {
         keyExtractor={(item) => item.id}
         renderItem={({ item }) => <CategoryListItem category={item} />}
         onEndReached={onEndReached}
-        onEndReachedThreshold={0.1}
-        ListFooterComponent={<Loading isLoading={isFetchingNextPage && !isLoading} />}
+        onEndReachedThreshold={0.5}
+        ListFooterComponent={isFetchingNextPage ? <VideosSkeleton /> : null}
       />
     </Container>
   )

@@ -16,6 +16,8 @@ export const useCategoryList = () => {
 
   function onEndReached() {
     if (hasNextPage) {
+      console.log('chamouu')
+
       fetchNextPage({ cancelRefetch: true })
     }
   }

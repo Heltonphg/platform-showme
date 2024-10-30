@@ -1,6 +1,6 @@
 import { CategoryType } from '@type/category.types'
 import { VideoList } from '../../VideoList/video-list.component'
-import { Container, TitleCategory } from './catery-list-item.styles'
+import { Container, TitleCategory } from './category-list-item.styles'
 
 type RenderCategoryProps = {
   category: CategoryType

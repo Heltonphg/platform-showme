@@ -3,7 +3,7 @@ import styled from 'styled-components/native'
 import { CategoryType } from '@type/category.types'
 
 export const Container = styled.View`
-  flex: 1;
+  padding-top: ${({ theme }) => theme.METRICS.BASE_PEDDING}px;
 `
 
 export const CategoryFlatList = styled(
@@ -11,6 +11,11 @@ export const CategoryFlatList = styled(
 ).attrs(({ theme }) => ({
   showsVerticalScrollIndicator: false,
   contentContainerStyle: {
-    paddingHorizontal: theme.METRICS.BASE_PEDDING
+    paddingHorizontal: theme.METRICS.BASE_PEDDING,
+    paddingBottom: 30
   }
 }))``
+
+export const Wrapper = styled.View`
+  padding: ${({ theme }) => theme.METRICS.BASE_PEDDING}px;
+`

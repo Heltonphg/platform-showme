@@ -2,7 +2,7 @@ import { api } from '@services/api.service'
 import { CategoryType } from '@src/types/category.types'
 import { PageData } from '@type/page-data.types'
 
-const LIMIT = 10
+const LIMIT = 4
 
 async function list(page: number): Promise<PageData<CategoryType>> {
   try {
@@ -13,7 +13,6 @@ async function list(page: number): Promise<PageData<CategoryType>> {
       }
     })
 
-    //TODO: Remove this line after implement the real API
     await new Promise((resolve) => setTimeout(resolve, 2000))
 
     return {
