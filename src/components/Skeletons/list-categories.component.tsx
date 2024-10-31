@@ -6,6 +6,7 @@ export const ListCategorieskeleton = () => {
 
   return (
     <ContentLoader
+      testID="list-category-skeleton"
       width={width}
       height={height}
       backgroundColor="#333"

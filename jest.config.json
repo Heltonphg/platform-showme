@@ -7,7 +7,9 @@
   "modulePathIgnorePatterns": ["mocks", "coverage", "utils"],
   "setupFiles": [
     "./__tests__/mocks/libs/react-native-safe-area-context.ts",
-    "./__tests__/mocks/libs/size-matters.ts"
+    "./__tests__/mocks/libs/size-matters.ts",
+    "./__tests__/mocks/libs/react-navigation.ts",
+    "./__tests__/mocks/libs/react-native-reanimated.ts"
   ],
   "setupFilesAfterEnv": ["@testing-library/react-native/extend-expect"],
   "transform": {

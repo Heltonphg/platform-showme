@@ -6,7 +6,9 @@
     "start": "expo start --dev-client",
     "android": "expo run:android",
     "ios": "expo run:ios",
-    "lint": "prettier src --write && eslint src --fix"
+    "lint": "prettier src --write && eslint src --fix",
+    "test": "jest",
+    "test:coverage": "jest --coverage"
   },
   "dependencies": {
     "@expo-google-fonts/roboto": "^0.2.3",

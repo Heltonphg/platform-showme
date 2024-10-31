@@ -8,7 +8,14 @@ type LoadingIndicatorProps = {
 
 export function Loading({ isLoading = true, ...rest }: LoadingIndicatorProps) {
   if (isLoading) {
-    return <ActivityIndicator color={theme.COLORS.LIGHT[200]} size="large" {...rest} />
+    return (
+      <ActivityIndicator
+        testID={'loading'}
+        color={theme.COLORS.LIGHT[200]}
+        size="large"
+        {...rest}
+      />
+    )
   }
 
   return null

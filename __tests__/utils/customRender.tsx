@@ -1,13 +1,18 @@
 import React from 'react'
 import { SafeAreaProvider } from 'react-native-safe-area-context'
+import { QueryClient, QueryClientProvider } from 'react-query'
 import { ThemeProvider } from 'styled-components/native'
 import { render, RenderOptions } from '@testing-library/react-native'
 import theme from '../../src/theme'
 
 function Providers({ children }: { children: React.ReactNode }) {
+  const queryClient = new QueryClient()
+
   return (
     <SafeAreaProvider>
-      <ThemeProvider theme={theme}>{children}</ThemeProvider>
+      <QueryClientProvider client={queryClient}>
+        <ThemeProvider theme={theme}>{children}</ThemeProvider>
+      </QueryClientProvider>
     </SafeAreaProvider>
   )
 }

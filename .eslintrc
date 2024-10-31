@@ -54,6 +54,8 @@
     "unused-imports/no-unused-imports-ts": "warn",
     "unused-imports/no-unused-vars": "warn",
     "react-hooks/rules-of-hooks": "error",
-    "@typescript-eslint/no-empty-interface": "off"
+    "@typescript-eslint/no-empty-interface": "off",
+    "no-empty-function": "off",
+    "@typescript-eslint/no-empty-function": "off"
   }
 }

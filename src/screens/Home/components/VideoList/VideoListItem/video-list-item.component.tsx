@@ -19,7 +19,11 @@ export const VideoListItem = ({ video, index }: VideoListItemProps) => {
   return (
     <Container entering={FadeInDown.delay(200 * index)}>
       <Pressable onPress={onNavigateToVideoDetail}>
-        <Thumbnail sharedTransitionTag={video.id} source={{ uri: video.thumbnail }} />
+        <Thumbnail
+          testID={'thumbnail'}
+          sharedTransitionTag={video.id}
+          source={{ uri: video.thumbnail }}
+        />
       </Pressable>
     </Container>
   )

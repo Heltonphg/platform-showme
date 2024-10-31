@@ -6,6 +6,7 @@ export const VideosSkeleton = () => {
 
   return (
     <ContentLoader
+      testID="list-videos-skeleton"
       width={width}
       height={190}
       backgroundColor="#333"
