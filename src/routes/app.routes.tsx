@@ -1,8 +1,8 @@
 import { createNativeStackNavigator } from '@react-navigation/native-stack'
-import { Home, VideoDetail } from '../screens'
+import { Home, VideoDetail, VideoPlay } from '../screens'
 import { RootAppParamList, RootAppRoutes } from './types/app.routes.types'
 
-const { Navigator, Screen } = createNativeStackNavigator<RootAppParamList>()
+const { Navigator, Screen, Group } = createNativeStackNavigator<RootAppParamList>()
 
 export function AppRoutes() {
   return (
@@ -17,6 +17,9 @@ export function AppRoutes() {
         component={VideoDetail}
         options={{ animation: 'slide_from_right' }}
       />
+      <Group screenOptions={{ presentation: 'modal' }}>
+        <Screen name={RootAppRoutes.VIDEO_PLAY} component={VideoPlay} />
+      </Group>
     </Navigator>
   )
 }

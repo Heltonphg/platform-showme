@@ -4,7 +4,8 @@ import { VideoType } from '@type/video.types'
 
 export enum RootAppRoutes {
   Home = 'Home',
-  VIDEO_DETAIL = 'VIDEO_DETAIL'
+  VIDEO_DETAIL = 'VIDEO_DETAIL',
+  VIDEO_PLAY = 'VIDEO_PLAY'
 }
 
 export type RootAppParamList = {
@@ -12,8 +13,11 @@ export type RootAppParamList = {
   [RootAppRoutes.VIDEO_DETAIL]: {
     videoItem: VideoType
   }
+  [RootAppRoutes.VIDEO_PLAY]: {
+    hls_path: string
+  }
 }
 
 export type AppNavigationProps = NativeStackNavigationProp<RootAppParamList>
-
 export type VideoDetailRouteProps = RouteProp<RootAppParamList, RootAppRoutes.VIDEO_DETAIL>
+export type VideoPlayRouteProps = RouteProp<RootAppParamList, RootAppRoutes.VIDEO_PLAY>
