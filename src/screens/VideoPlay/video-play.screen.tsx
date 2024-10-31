@@ -1,20 +1,15 @@
-import React, { useState } from 'react'
+import React from 'react'
 import { Video } from 'expo-av'
 import { Loading } from '@components/Loading/loading.component'
-import { useRoute } from '@react-navigation/native'
-import { VideoPlayRouteProps } from '@routes/types/app.routes.types'
+import { useVideoPlay } from './video-play.hook'
 import { Container, DotLine } from './video-play.styles'
 
 export const VideoPlay = () => {
-  const {
-    params: { hls_path }
-  } = useRoute<VideoPlayRouteProps>()
-
-  const [loading, setLoading] = useState(true)
+  const { hlsPath, loadingVideo, setLoadingVideo } = useVideoPlay()
 
   return (
     <Container>
-      {loading && (
+      {loadingVideo && (
         <Loading
           style={{ position: 'absolute', top: '50%', left: '50%', marginLeft: -20, marginTop: -20 }}
         />
@@ -23,7 +18,7 @@ export const VideoPlay = () => {
       <DotLine />
 
       <Video
-        source={{ uri: hls_path }}
+        source={{ uri: hlsPath }}
         rate={1.0}
         volume={1.0}
         isMuted={false}
@@ -31,8 +26,8 @@ export const VideoPlay = () => {
         isLooping
         useNativeControls
         style={{ width: '100%', height: '100%' }}
-        onLoad={() => setLoading(false)}
-        onError={() => setLoading(false)}
+        onLoad={() => setLoadingVideo(false)}
+        onError={() => setLoadingVideo(false)}
       />
     </Container>
   )

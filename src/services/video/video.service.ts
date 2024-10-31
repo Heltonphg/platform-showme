@@ -26,6 +26,30 @@ async function list(page: number, categoryId?: string): Promise<PageData<VideoTy
   }
 }
 
+async function getViewsByVideoId(videoId: string): Promise<number> {
+  try {
+    const video = await api.get(`videos/${videoId}`)
+
+    return video.data.views
+  } catch (error) {
+    return 0
+  }
+}
+
+async function incrementView(videoId: string): Promise<void> {
+  try {
+    const video = await api.get(`videos/${videoId}`)
+
+    await api.patch(`videos/${videoId}`, {
+      views: video.data.views + 1
+    })
+  } catch (error) {
+    console.error(error)
+  }
+}
+
 export const videoService = {
-  list
+  list,
+  incrementView,
+  getViewsByVideoId
 }

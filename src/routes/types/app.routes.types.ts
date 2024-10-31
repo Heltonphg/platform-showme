@@ -14,7 +14,8 @@ export type RootAppParamList = {
     videoItem: VideoType
   }
   [RootAppRoutes.VIDEO_PLAY]: {
-    hls_path: string
+    hlsPath: string
+    videoId: string
   }
 }
 

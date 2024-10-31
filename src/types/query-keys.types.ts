@@ -1,4 +1,5 @@
 export enum QueryKeys {
   CATEGORIES = 'CATEGORIES',
-  VIDEOS = 'VIDEOS'
+  VIDEOS = 'VIDEOS',
+  VIDEO_VIEWS = 'VIDEO_VIEWS'
 }
