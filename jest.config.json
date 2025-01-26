@@ -13,7 +13,8 @@
   ],
   "setupFilesAfterEnv": ["@testing-library/react-native/extend-expect"],
   "transform": {
-    "^.+\\.[tj]sx?$": "babel-jest"
+    "^.+/((@)?react-native)/.+\\.(js|jsx)$": "babel-jest",
+    "^.+\\.(js|ts|jsx|tsx)$": "@swc/jest"
   },
   "collectCoverageFrom": ["./src/**/*.{ts,tsx}", "!./src/**/styles.ts"],
   "coveragePathIgnorePatterns": ["./src/@types", "./src/styles", "./__tests__/coverage"],

@@ -35,6 +35,8 @@
   },
   "devDependencies": {
     "@babel/core": "^7.20.0",
+    "@swc/core": "^1.7.42",
+    "@swc/jest": "^0.2.37",
     "@testing-library/react-native": "^12.5.0",
     "@types/jest": "^29.5.11",
     "@types/react": "~18.2.45",

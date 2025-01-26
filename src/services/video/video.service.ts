@@ -13,6 +13,7 @@ async function list(page: number, categoryId?: string): Promise<PageData<VideoTy
         category: categoryId
       }
     })
+    await new Promise((resolve) => setTimeout(resolve, 1500))
 
     return {
       next: response.next,
