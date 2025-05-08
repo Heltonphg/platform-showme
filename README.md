@@ -1,9 +1,9 @@
 <div>
-<h1>Case - Dev React Native</h1>
+<h1> Tech React Native</h1>
 
 ## 👋 Intro
 
-O objetivo desse case é construir um aplicativo em React Native para reprodução de vídeos HLS
+O objetivo desse projeto é construir um aplicativo em React Native para reprodução de vídeos HLS
 
 ## 📱 Telas
 
